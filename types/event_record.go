@@ -229,6 +229,8 @@ type EventRecords struct {
 	Lottery_Winner         []EventLotteryWinner
 	Lottery_TicketBought   []EventLotteryTicketBought
 
+	MessageQueue_Processed []EventMessageQueueProcessed
+
 	Multisig_MultisigApproval  []EventMultisigApproval
 	Multisig_MultisigCancelled []EventMultisigCancelled
 	Multisig_MultisigExecuted  []EventMultisigExecuted
@@ -368,12 +370,13 @@ type EventRecords struct {
 	Sudo_Sudid      []EventSudoSudid
 	Sudo_SudoAsDone []EventSudoAsDone
 
-	System_CodeUpdated      []EventSystemCodeUpdated
-	System_ExtrinsicFailed  []EventSystemExtrinsicFailed
-	System_ExtrinsicSuccess []EventSystemExtrinsicSuccess
-	System_KilledAccount    []EventSystemKilledAccount
-	System_NewAccount       []EventSystemNewAccount
-	System_Remarked         []EventSystemRemarked
+	System_CodeUpdated       []EventSystemCodeUpdated
+	System_ExtrinsicFailed   []EventSystemExtrinsicFailed
+	System_ExtrinsicSuccess  []EventSystemExtrinsicSuccess
+	System_KilledAccount     []EventSystemKilledAccount
+	System_NewAccount        []EventSystemNewAccount
+	System_Remarked          []EventSystemRemarked
+	System_UpgradeAuthorized []EventSystemUpgradeAuthorized
 
 	TechnicalCommittee_Approved       []EventTechnicalCommitteeApproved
 	TechnicalCommittee_Closed         []EventTechnicalCommitteeClosed
@@ -546,7 +549,7 @@ func (e EventRecordsRaw) DecodeEventRecords(m *Metadata, t interface{}) error { 
 		// check whether name for eventID exists in t
 		field := val.FieldByName(fmt.Sprintf("%v_%v", moduleName, eventName))
 		if !field.IsValid() {
-			continue // Skip the ones we can't parse cause is an event we do not care about
+			return fmt.Errorf("unable to find field %v_%v for event #%v with EventID %v", moduleName, eventName, i, id)
 		}
 
 		// create a pointer to with the correct type that will hold the decoded event

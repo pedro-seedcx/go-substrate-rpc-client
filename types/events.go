@@ -986,6 +986,13 @@ type EventSystemKilledAccount struct {
 	Topics []Hash
 }
 
+// EventSystemKilledAccount is emitted when an account is reaped
+type EventSystemUpgradeAuthorized struct {
+	Phase  Phase
+	Hash   Hash
+	Topics []Hash
+}
+
 // EventAssetIssued is emitted when an asset is issued.
 type EventAssetIssued struct {
 	Phase   Phase

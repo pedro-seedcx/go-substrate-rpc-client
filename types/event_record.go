@@ -368,12 +368,13 @@ type EventRecords struct {
 	Sudo_Sudid      []EventSudoSudid
 	Sudo_SudoAsDone []EventSudoAsDone
 
-	System_CodeUpdated      []EventSystemCodeUpdated
-	System_ExtrinsicFailed  []EventSystemExtrinsicFailed
-	System_ExtrinsicSuccess []EventSystemExtrinsicSuccess
-	System_KilledAccount    []EventSystemKilledAccount
-	System_NewAccount       []EventSystemNewAccount
-	System_Remarked         []EventSystemRemarked
+	System_CodeUpdated       []EventSystemCodeUpdated
+	System_ExtrinsicFailed   []EventSystemExtrinsicFailed
+	System_ExtrinsicSuccess  []EventSystemExtrinsicSuccess
+	System_KilledAccount     []EventSystemKilledAccount
+	System_NewAccount        []EventSystemNewAccount
+	System_Remarked          []EventSystemRemarked
+	System_UpgradeAuthorized []EventSystemUpgradeAuthorized
 
 	TechnicalCommittee_Approved       []EventTechnicalCommitteeApproved
 	TechnicalCommittee_Closed         []EventTechnicalCommitteeClosed

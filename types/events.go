@@ -110,6 +110,21 @@ type EventBalancesWithdraw struct {
 	Topics  []Hash
 }
 
+// EventBalancesMinted
+type EventBalancesMinted struct {
+	Phase   Phase
+	Who     AccountID
+	Balance U128
+	Topics  []Hash
+}
+
+// EventBalancesIssued
+type EventBalancesIssued struct {
+	Phase   Phase
+	Balance U128
+	Topics  []Hash
+}
+
 // EventBalancesSlashed is emitted when some amount was removed from the account (e.g. for misbehavior)
 type EventBalancesSlashed struct {
 	Phase   Phase
@@ -265,7 +280,8 @@ type EventLotteryTicketBought struct {
 // EventMessageQueueProcessed emitted when a message from a queue is processed
 type EventMessageQueueProcessed struct {
 	Phase  Phase
-	Origin MultiLocationV1
+	Id     Hash
+	Origin U8
 	Weight Weight
 	Topics []Hash
 }
@@ -1158,6 +1174,15 @@ type EventAssetTransferredApproved struct {
 type EventAssetAssetStatusChanged struct {
 	Phase   Phase
 	AssetID U32
+	Topics  []Hash
+}
+
+// EventAssetAssetStatusChanged is emitted when an asset has had its attributes changed by the `Force` origin.
+type EventAssetDeposited struct {
+	Phase   Phase
+	AssetID U32
+	Who     AccountID
+	Balance U128
 	Topics  []Hash
 }
 

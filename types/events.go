@@ -265,7 +265,7 @@ type EventLotteryTicketBought struct {
 // EventMessageQueueProcessed emitted when a message from a queue is processed
 type EventMessageQueueProcessed struct {
 	Phase  Phase
-	Who    AccountID
+	Id     Hash
 	Origin MultiLocationV1
 	Weight Weight
 	Topics []Hash
@@ -1024,8 +1024,8 @@ type EventAssetCreated struct {
 type EventAssetTransferred struct {
 	Phase   Phase
 	AssetID U32
-	To      AccountID
 	From    AccountID
+	To      AccountID
 	Balance U128
 	Topics  []Hash
 }

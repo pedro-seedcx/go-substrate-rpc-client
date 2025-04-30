@@ -92,6 +92,7 @@ type EventRecords struct {
 	Assets_ApprovalCancelled   []EventAssetApprovalCancelled
 	Assets_TransferredApproved []EventAssetTransferredApproved
 	Assets_AssetStatusChanged  []EventAssetAssetStatusChanged
+	Assets_Deposited           []EventAssetDeposited
 
 	BagsList_Rebagged []EventBagsListRebagged
 
@@ -105,6 +106,8 @@ type EventRecords struct {
 	Balances_Transfer           []EventBalancesTransfer
 	Balances_Unreserved         []EventBalancesUnreserved
 	Balances_Withdraw           []EventBalancesWithdraw
+	Balances_Minted             []EventBalancesMinted
+	Balances_Issued             []EventBalancesIssued
 
 	Bounties_BountyProposed     []EventBountiesBountyProposed
 	Bounties_BountyRejected     []EventBountiesBountyRejected

@@ -229,6 +229,8 @@ type EventRecords struct {
 	Lottery_Winner         []EventLotteryWinner
 	Lottery_TicketBought   []EventLotteryTicketBought
 
+	MessageQueue_Processed []EventMessageQueueProcessed
+
 	Multisig_MultisigApproval  []EventMultisigApproval
 	Multisig_MultisigCancelled []EventMultisigCancelled
 	Multisig_MultisigExecuted  []EventMultisigExecuted

@@ -265,7 +265,6 @@ type EventLotteryTicketBought struct {
 // EventMessageQueueProcessed emitted when a message from a queue is processed
 type EventMessageQueueProcessed struct {
 	Phase  Phase
-	Id     Hash
 	Origin MultiLocationV1
 	Weight Weight
 	Topics []Hash

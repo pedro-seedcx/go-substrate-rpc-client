@@ -262,15 +262,6 @@ type EventLotteryTicketBought struct {
 	Topics    []Hash
 }
 
-// EventMessageQueueProcessed emitted when a message from a queue is processed
-type EventMessageQueueProcessed struct {
-	Phase  Phase
-	Who    AccountID
-	Origin MultiLocationV1
-	Weight Weight
-	Topics []Hash
-}
-
 // EventOffencesOffence is emitted when there is an offence reported of the given kind happened at the session_index
 // and (kind-specific) time slot. This event is not deposited for duplicate slashes
 type EventOffencesOffence struct {
@@ -992,13 +983,6 @@ type EventSystemRemarked struct {
 type EventSystemKilledAccount struct {
 	Phase  Phase
 	Who    AccountID
-	Topics []Hash
-}
-
-// EventSystemUpgradeAuthorized when an upgrade of the system is authorized
-type EventSystemUpgradeAuthorized struct {
-	Phase  Phase
-	Hash   Hash
 	Topics []Hash
 }
 
